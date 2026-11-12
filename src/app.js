@@ -12,8 +12,8 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/add', (req, res) => {
-  const a = Number(req.query.a);
-  const b = Number(req.query.b);
+  const a = Number(req.query);
+  const b = Number(req.query);
   if (Number.isNaN(a) || Number.isNaN(b)) {
     return res.status(400).json({ error: 'a and b must be numbers' });
   }
