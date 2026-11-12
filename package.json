@@ -1,0 +1,29 @@
+{
+  "name": "ci-cd-test",
+  "version": "1.0.0",
+  "description": "Small Node.js backend for testing CI/CD (lint, build, test)",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node dist/server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "esbuild src/server.js --bundle --platform=node --target=node20 --outfile=dist/server.js",
+    "test": "jest --coverage"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.39.5",
+    "globals": "^17.14.0",
+    "jest": "^30.5.2",
+    "supertest": "^7.3.2"
+  }
+}
